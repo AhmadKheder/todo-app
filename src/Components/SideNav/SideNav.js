@@ -18,11 +18,30 @@ import Typography from "@mui/material/Typography";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import DoneAllIcon from "@mui/icons-material/DoneAll";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import CheckBoxSharpIcon from "@mui/icons-material/CheckBoxSharp";
 const drawerWidth = 240;
+
 const SideNav = (props) => {
   const drawer = (
     <div>
-      <h1>To Do App</h1>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <CheckBoxSharpIcon
+          sx={{
+            position: "absolute",
+            width: "40px",
+            height: "40px",
+            left: "4px",
+            top: "24px",
+            color: "#FFB520",
+            // background: "#FFFF",
+            borderRadius: "8px !important",
+          }}
+        />
+        <h1>To Do App</h1>
+      </div>
+
       <Divider />
       <List>
         {[
@@ -30,7 +49,21 @@ const SideNav = (props) => {
           ["All Tasks", <DoneAllIcon />],
           ["To Do", <AssignmentTurnedInIcon />],
         ].map((text, index) => (
-          <ListItem button key={text[0]}>
+          <ListItem
+            button
+            key={text[0]}
+            sx={{
+              borderRadius: "8px",
+              margin: "10px",
+              width: "222px",
+              "&:hover ,:active": {
+                borderRadius: "8px",
+                margin: "10px",
+                width: "222px",
+                backgroundColor: "#FFB520",
+              },
+            }}
+          >
             <ListItemIcon>{text[1]}</ListItemIcon>
             <ListItemText primary={text[0]} />
           </ListItem>

@@ -1,0 +1,11 @@
+.aside {
+  display: flex;
+  /* align-self: center; */
+  /* width: 280px; */
+}
+.header-body-flex {
+  display: flex;
+  flex-direction: column;
+  /* width: 1086px; */
+  /* height: 176px; */
+}
