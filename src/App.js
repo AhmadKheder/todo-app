@@ -12,8 +12,10 @@ function App() {
         <SideNav />
       </div>
       <div className="header-body-flex">
-        <Header />
-        <TaskList01 />
+        <Header className="Header" />
+        <div className="TaskList01">
+          <TaskList01 className="TaskList01" />
+        </div>
       </div>
     </div>
   );

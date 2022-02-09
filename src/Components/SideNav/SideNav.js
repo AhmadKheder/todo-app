@@ -1,31 +1,25 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
+import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
+import CheckBoxSharpIcon from "@mui/icons-material/CheckBoxSharp";
+import DoneAllIcon from "@mui/icons-material/DoneAll";
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import EventAvailableIcon from "@mui/icons-material/EventAvailable";
-import DoneAllIcon from "@mui/icons-material/DoneAll";
-import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
-import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import CheckBoxSharpIcon from "@mui/icons-material/CheckBoxSharp";
-const drawerWidth = 240;
+import * as React from "react";
+const drawerWidth = 280;
 
 const SideNav = (props) => {
   const drawer = (
-    <div>
+    <div
+      style={{
+        position: "static ",
+      }}
+    >
       <div style={{ display: "flex", justifyContent: "center" }}>
         <CheckBoxSharpIcon
           sx={{
@@ -55,11 +49,14 @@ const SideNav = (props) => {
             sx={{
               borderRadius: "8px",
               margin: "10px",
-              width: "222px",
+              width: "232px",
+              height: "40px",
+
               "&:hover ,:active": {
                 borderRadius: "8px",
                 margin: "10px",
-                width: "222px",
+                width: "232px",
+                height: "40px",
                 backgroundColor: "#FFB520",
               },
             }}

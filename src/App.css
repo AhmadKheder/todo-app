@@ -1,0 +1,20 @@
+.App {
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+.aside {
+  /* display: flex; */
+}
+.header-body-flex {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-content: center; */
+}
+Header {
+  /* display: flex;
+  align-self: left;
+  width: 1086px;
+  height: 176px;
+  padding-top: 400px; */
+}

@@ -1,34 +1,22 @@
-import * as React from "react";
+import AddIcon from "@mui/icons-material/Add";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import TodayIcon from "@mui/icons-material/Today";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Button from "@mui/material/Button";
+import InputLabel from "@mui/material/InputLabel";
+import Paper from "@mui/material/Paper";
+import Radio from "@mui/material/Radio";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import Radio from "@mui/material/Radio";
-import TodayIcon from "@mui/icons-material/Today";
-import AddIcon from "@mui/icons-material/Add";
-import Button from "@mui/material/Button";
-import FormGroup from "@mui/material/FormGroup";
-import InputLabel from "@mui/material/InputLabel";
-import Input from "@mui/material/Input";
-import FormLabel from "@mui/material/FormLabel";
-import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { EqualizerRounded } from "@mui/icons-material";
-import FormControl, { useFormControl } from "@mui/material/FormControl";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import Box from "@mui/material/Box";
-import FormHelperText from "@mui/material/FormHelperText";
-import { useForm } from "react-hook-form";
+import * as React from "react";
 import TodoForm from "./TodoForm";
-import RadioGroup from "@mui/material/RadioGroup";
 
 // const rows = [
 //   { id: 1, taskTitle: "Task1", taskDesc: "Task1Task1", taskDate: 35 },
@@ -67,14 +55,18 @@ const TaskList01 = () => {
   const handleTodoAccomblish = (event) => {
     event.preventDefault();
     const todo = event.target;
+    const clickedTodo = todos.find(todo.id);
+    clickedTodo.status = !clickedTodo.status;
+
+    // const clickedTodo = todos.find((acc) => {
+    //   if (acc.id == todo.id) {
+    //     return (acc.status = !acc.status);
+    //   }
+    // });
+
     // todo.checked = todo.checked ? false : true;
     if (todo.checked) {
-      // const todoLabel = document.querySelector(`${todo.id}`);
-      // todoLabel.style.textDecoration = "line-through";
     }
-    //  { todo.checked && todo.style.textDecoration ='line-through';}
-    console.log("event.target:", event.target.checked);
-    console.log("event.target:", event.target.value);
   };
   return (
     <>
@@ -122,13 +114,13 @@ const TaskList01 = () => {
                       onChange={(event) => {
                         handleTodoAccomblish(event);
                       }}
+                      id={todo.id}
                       value={todo.title}
                     />
                     <InputLabel
                       name={todo.title}
                       id={todo.id}
                       sx={{
-                        // height: "16px",
                         paddingLeft: 2,
                       }}
                     >
@@ -142,7 +134,12 @@ const TaskList01 = () => {
                 </TableCell>
               </TableRow>
             ))}
+          </TableBody>
+        </Table>
+        <Table>
+          <TableBody>
             <TableRow>
+              {/* <TableCell variant="context.table.footer"> */}
               <Accordion component={Paper}>
                 <AccordionSummary
                   component={Paper}
@@ -150,7 +147,18 @@ const TaskList01 = () => {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Button sx={{ left: 22, height: 77 }} startIcon={<AddIcon />}>
+                  <Button
+                    sx={{
+                      left: 22,
+                      height: 77,
+                      color: "#555B77",
+                      backgroundColor: "#FFFFFF",
+                      "&:hover": {
+                        background: "#FFFFFF",
+                      },
+                    }}
+                    startIcon={<AddIcon />}
+                  >
                     New Task
                   </Button>
                 </AccordionSummary>
@@ -159,6 +167,7 @@ const TaskList01 = () => {
                   <TodoForm pull_typed_todo={handel_pull_typed_todo} />
                 </AccordionDetails>
               </Accordion>
+              {/* </TableCell> */}
             </TableRow>
           </TableBody>
         </Table>

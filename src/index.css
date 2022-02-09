@@ -1,11 +1,28 @@
-.aside {
+.App {
   display: flex;
-  /* align-self: center; */
-  /* width: 280px; */
+  /* flex-direction: column; */
+}
+#root > div > div.aside > div > div > div > div {
+  position: static;
+}
+.aside {
+  /* display: flex;
+  position: static; */
 }
 .header-body-flex {
   display: flex;
   flex-direction: column;
-  /* width: 1086px; */
-  /* height: 176px; */
+  width: 100%;
+}
+.Header {
+  width: 1086px;
+  height: 176px;
+  padding-top: 400px;
+}
+.TaskList01 {
+  /* width: 100%; */
+
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-end;
 }
